@@ -48,19 +48,23 @@ The specific failure is this: the group splits the syllabus, each member studies
 
 ### How we know the problem is real
 
-> **TODO (team to fill in before submission).** The rubric awards 12 of this section's 30 points for this, and requires **at least two people outside our team who actually experience the problem**. For each person it wants who they are and what they told us, **with specifics, not just that they agreed**.
->
-> For each interview, record:
-> - Who they are: course / year / what kind of study group they are in
-> - What they told us: the concrete thing that went wrong, in their words where possible
-> - What they currently do instead
-> - What they said they would want
->
-> **Interview 1 — ______**
->
-> **Interview 2 — ______**
->
-> Note: the rubric explicitly says that only one conversation scores 6 of 12, and that teammates do not count.
+At the time of submission (Sunday 25 October, end of Week 7) we have **not yet completed** the two required conversations, so this criterion is unsupported in this version. We are saying so plainly rather than filling the section with our own assumptions.
+
+What we have arranged:
+
+- **Interviewee 1 — 盧同學**, a student in the 百川 interdisciplinary bachelor programme who prepares for exams with a study group, and who has agreed to talk with us.
+- **Interviewee 2 — 林同學**, a Computer Science student who studies for technical courses in a group, and who has agreed to talk with us.
+
+Both are outside the project team. We will hold the two conversations in the first days of Week 8 and add the write-ups to this section in the repository through a pull request, so that the version on `main` carries the evidence.
+
+For each conversation we will record who the person is (course, year, group size), the concrete thing that went wrong in their own words, what they currently do instead, and what they said they would want. The questions are kept in the past tense so that we get events rather than opinions:
+
+1. Have you prepared for an exam with a group and split the chapters between you? How many people, and which course?
+2. After splitting, how did you know whether the others had actually finished their part? Did it ever turn out that nobody had covered something?
+3. Did two people ever explain the same thing differently? How was it settled?
+4. Did you coordinate over LINE, a shared document, or something else? Which part was the most annoying?
+
+If either person tells us that this problem does not happen to them, we will record that as-is and revise the problem statement to match what we heard.
 
 ### Why existing tools do not adequately solve it
 
@@ -170,6 +174,6 @@ The repository also contains `AI_USAGE_GUIDELINES.md`, which defines our permitt
 
 Per the rubric's note that acknowledged uncertainty is never penalised but unsupported claims are:
 
-- **We have not yet run the user conversations** that §2 requires. Until we have, the problem statement above is our own reasoning about a situation we have each experienced, not validated evidence.
+- **We have not yet run the two user conversations** that §2 requires. They are arranged with the two people named in §2 for the first days of Week 8, and the write-ups will be added to this document through a pull request. Until then, the problem statement above is our own reasoning about a situation we have each experienced, not validated evidence.
 - We do not know whether the *disputed* state is something groups will actually use, or whether they will route around it and settle disagreements in chat as they do now. That is the single assumption the evaluation is designed to test.
 - The timing in §4 assumes a usable prototype exists before CP2. If it does not, we will run the baseline sessions first so that at least the comparison data is not lost.
