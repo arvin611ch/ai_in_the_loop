@@ -48,30 +48,33 @@ The specific failure is this: the group splits the syllabus, each member studies
 
 ### How we know the problem is real
 
-At the time of submission (Sunday 25 October, end of Week 7) we have **not yet completed** the two required conversations, so this criterion is unsupported in this version. We are saying so plainly rather than filling the section with our own assumptions.
+We spoke with two students outside the team on 25 October. Both are second-year undergraduates who had recently prepared for a technical midterm together with other people. Both conversations were held over LINE in Chinese; the quotes below are our translations of what they wrote.
 
-What we have arranged:
+**Interviewee 1 — 盧同學, second year, 百川 interdisciplinary bachelor programme.** Prepared for a Probability midterm with a group of four. Each person organised one chapter and shared their notes with the others at the end.
 
-- **Interviewee 1 — 盧同學**, a student in the 百川 interdisciplinary bachelor programme who prepares for exams with a study group, and who has agreed to talk with us.
-- **Interviewee 2 — 林同學**, a Computer Science student who studies for technical courses in a group, and who has agreed to talk with us.
+- *How they knew the others had finished:* they did not check. "We just watched whether the notes got posted to the group." Once, a member said their chapter was done, but had only compiled the formulas and not the problem types. "We only found out right before the exam that none of us could really do that part."
+- *Disagreement:* two people got different answers to the same conditional-probability problem. They settled it by going through the professor's slides together and then asking ChatGPT to check the derivation.
+- *Tools:* LINE for messages and Google Docs for the notes. "The most annoying thing is that LINE messages get washed away. Sometimes we can't find a solution we already discussed, and we don't know whose notes are the latest version."
 
-Both are outside the project team. We will hold the two conversations in the first days of Week 8 and add the write-ups to this section in the repository through a pull request, so that the version on `main` carries the evidence.
+**Interviewee 2 — 林同學, second year, Computer Science.** Prepared for a Database Systems midterm with two friends. They did not formally split the chapters: each read on their own first and brought what they did not understand to the group.
 
-For each conversation we will record who the person is (course, year, group size), the concrete thing that went wrong in their own words, what they currently do instead, and what they said they would want. The questions are kept in the past tense so that we get events rather than opinions:
+- *How they knew the others had finished:* because there was no explicit division of work, the "I thought you had done it" problem came up less often. It still happened once: "Everyone assumed someone else had organised one part of the exam scope. In the end nobody had, and we each had to patch it ourselves right before the exam."
+- *Disagreement:* two people understood the result of a SQL JOIN differently. They wrote the query, ran it, and compared the output with the examples from class to see who was right.
+- *Tools:* LINE, plus Google Meet with screen sharing to look at problems together. "The most annoying thing is that after we discuss something there is no complete record. A few days later we've forgotten how we solved it and often have to discuss it all over again."
 
-1. Have you prepared for an exam with a group and split the chapters between you? How many people, and which course?
-2. After splitting, how did you know whether the others had actually finished their part? Did it ever turn out that nobody had covered something?
-3. Did two people ever explain the same thing differently? How was it settled?
-4. Did you coordinate over LINE, a shared document, or something else? Which part was the most annoying?
+**What we take from the two conversations.**
 
-If either person tells us that this problem does not happen to them, we will record that as-is and revise the problem statement to match what we heard.
+- Neither group had any way to see coverage other than whether notes appeared in the chat, and both hit the failure in our problem statement: a topic everyone believed was handled, found at the last moment to be missing or incomplete. 盧同學's case also shows that "done" means different things to different people, which is why the design asks for a confidence level and a per-topic status rather than a checkbox.
+- Both groups hit a real disagreement, and both resolved it by going to an authoritative source, the slides or actually running the code. That is the "owner verifies and records which version stands" step in our design sketch. It also suggests the board should record *how* a dispute was settled, not only that it was.
+- Both named the same pain about the record: solutions and decisions sink in LINE, nothing marks the latest version, and the group re-derives answers it already had. That is the gap between chat and the shared document described below.
+- One honest caveat: 林同學's group did not split the chapters, and said the coverage problem was correspondingly rarer. Our tool is aimed at groups that do divide the work, so this is consistent with our target users, but it also means the board is likely less useful to groups that study in parallel and only meet to discuss.
 
 ### Why existing tools do not adequately solve it
 
 Groups today use a combination of **LINE or Discord** for discussion and a **shared Google Doc** for the notes themselves. Each covers half the job and neither covers the gap between them.
 
-- **LINE / Discord.** Coverage and disagreement are discussed, but the answers are embedded in a scrolling conversation. There is no view that answers "which topics have no owner?" — reconstructing it means reading back through the thread, so in practice nobody does.
-- **Google Doc.** It holds the final notes well, but it has no notion of *confidence* or *disagreement*. Two contradictory explanations of the same topic sit next to each other as equally authoritative paragraphs, and a reader cannot tell that one of the authors was unsure. Comments can flag a conflict, but nothing tracks whether it was resolved or who owns it.
+- **LINE / Discord.** Coverage and disagreement are discussed, but the answers are embedded in a scrolling conversation. There is no view that answers "which topics have no owner?" — reconstructing it means reading back through the thread, so in practice nobody does. Both interviewees described exactly this: 盧同學 said earlier solutions get buried and cannot be found again, and 林同學 said discussions leave no complete record, so the group re-derives the same answer days later.
+- **Google Doc.** It holds the final notes well, but it has no notion of *confidence* or *disagreement*. Two contradictory explanations of the same topic sit next to each other as equally authoritative paragraphs, and a reader cannot tell that one of the authors was unsure. Comments can flag a conflict, but nothing tracks whether it was resolved or who owns it. 盧同學 added a version problem on top: with several people's notes in circulation, nobody knows which copy is the latest.
 - **Shared flashcard tools (Anki, Quizlet).** These assume the content is already correct and agreed. They are for memorising a settled answer, not for reaching one.
 
 What is missing in all three is a place where *coverage, disagreement and ownership* are first-class and visible at a glance, rather than being things you have to reconstruct.
@@ -174,6 +177,6 @@ The repository also contains `AI_USAGE_GUIDELINES.md`, which defines our permitt
 
 Per the rubric's note that acknowledged uncertainty is never penalised but unsupported claims are:
 
-- **We have not yet run the two user conversations** that §2 requires. They are arranged with the two people named in §2 for the first days of Week 8, and the write-ups will be added to this document through a pull request. Until then, the problem statement above is our own reasoning about a situation we have each experienced, not validated evidence.
+- **Our evidence is two conversations**, both with second-year students and both held over LINE rather than in person. That is the rubric minimum, not a sample. 林同學's group did not split the work and reported the coverage problem less often, so the evaluation should check whether groups that study in parallel get any value from the board at all.
 - We do not know whether the *disputed* state is something groups will actually use, or whether they will route around it and settle disagreements in chat as they do now. That is the single assumption the evaluation is designed to test.
 - The timing in §4 assumes a usable prototype exists before CP2. If it does not, we will run the baseline sessions first so that at least the comparison data is not lost.
